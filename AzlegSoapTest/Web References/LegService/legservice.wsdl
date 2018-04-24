@@ -1,0 +1,3152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://azleg.gov/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://azleg.gov/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service to retrieve Legislative data.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://azleg.gov/webservices/">
+      <s:element name="CommitteeActionsQualified">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeActionsQualifiedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeActionsQualifiedResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SOAPLegServiceHeader" type="tns:SOAPLegServiceHeader" />
+      <s:complexType name="SOAPLegServiceHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CommitteeActions">
+        <s:complexType />
+      </s:element>
+      <s:element name="CommitteeActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeActionsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegislature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Legislature" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegislatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeByLegislatureResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Legislature" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeByLegBodyResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Legislature" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeByLegTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegTypeBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Legislature" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegTypeBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeByLegTypeBodyResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Legislature" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeByLegIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeByLegIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeMembers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitteeMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitteeMembersResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberCommittees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberCommitteesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberCommitteesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByBillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesByBillResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesFromDateToDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesFromDateToDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesFromDateToDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByCommID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByCommIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesByCommIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByBillFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FloorVotesByBillFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorVotesByBillFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByCommittee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByCommitteeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingByCommitteeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByBillNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByBillNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingByBillNumResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByCommFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingByCommFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingByCommFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingVoteFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteFromDateToDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteFromDateToDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingVoteFromDateToDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForBillNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForBillNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingVoteForBillNumResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForCommID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForCommIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingVoteForCommIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForCommIDOnDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OnDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandingVoteForCommIDOnDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandingVoteForCommIDOnDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillsBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillsBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillsBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillsUpdated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatedDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillsUpdatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillsUpdatedResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SponsoredBills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SponsoredBillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SponsoredBillsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgendaBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByCommitteeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByCommitteeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgendaByCommitteeIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AgendaID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgendaByIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByCommitteeIDFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaByCommitteeIDFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgendaByCommitteeIDFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaBySessionIDFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgendaBySessionIDFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgendaBySessionIDFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sessions">
+        <s:complexType />
+      </s:element>
+      <s:element name="SessionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionsbyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionsbyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionsbyIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestToSpeakBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBySessionIDFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBySessionIDFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestToSpeakBySessionIDFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBetweenDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestToSpeakBetweenDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestToSpeakBetweenDatesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForAgainstNeutralBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBySessionIDFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBySessionIDFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForAgainstNeutralBySessionIDFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBetweenDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForAgainstNeutralBetweenDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForAgainstNeutralBetweenDatesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MembersBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MembersBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MembersBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberByIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalendarsBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByCommittee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CommitteeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByCommitteeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalendarsByCommitteeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByBodyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalendarsByBodyResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalendarsFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByCalendarID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalendarID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalendarsByCalendarIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalendarsByCalendarIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsBySessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsBySessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsBySessionIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsByBillNumResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNumFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNumFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsByBillNumFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsFromDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsFromDateToDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsFromDateToDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsFromDateToDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByDocType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByDocTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsByDocTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNumDocType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BillNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentsByBillNumDocTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentsByBillNumDocTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ARS">
+        <s:complexType />
+      </s:element>
+      <s:element name="ARSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ARSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CommitteeActionsQualifiedSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeActionsQualified" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeActionsQualifiedSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeActionsQualifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeActionsQualifiedSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeActions" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeActionsSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegislatureSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegislature" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegislatureSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegislatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegislatureSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegBodySoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegBody" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegBodySoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegBodySOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegType" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeBodySoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegTypeBody" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeBodySoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegTypeBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegTypeBodySOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegID" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeByLegIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeByLegIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:CommitteeMembers" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:CommitteeMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitteeMembersSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="MemberCommitteesSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberCommittees" />
+  </wsdl:message>
+  <wsdl:message name="MemberCommitteesSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberCommitteesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberCommitteesSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesByBill" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesByBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesFromDate" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateToDateSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesFromDateToDate" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateToDateSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesFromDateToDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesFromDateToDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByCommIDSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesByCommID" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByCommIDSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesByCommIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByCommIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:FloorVotesByBillFromDate" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:FloorVotesByBillFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="FloorVotesByBillFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="StandingBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommitteeSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingByCommittee" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommitteeSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingByCommitteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommitteeSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingByBillNumSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingByBillNum" />
+  </wsdl:message>
+  <wsdl:message name="StandingByBillNumSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingByBillNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingByBillNumSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingFromDate" />
+  </wsdl:message>
+  <wsdl:message name="StandingFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingByCommFromDate" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingByCommFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingByCommFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingVoteFromDate" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingVoteFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateToDateSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingVoteFromDateToDate" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateToDateSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingVoteFromDateToDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteFromDateToDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForBillNumSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingVoteForBillNum" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForBillNumSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingVoteForBillNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForBillNumSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingVoteForCommID" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingVoteForCommIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDOnDateSoapIn">
+    <wsdl:part name="parameters" element="tns:StandingVoteForCommIDOnDate" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDOnDateSoapOut">
+    <wsdl:part name="parameters" element="tns:StandingVoteForCommIDOnDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandingVoteForCommIDOnDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="BillInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:BillInfo" />
+  </wsdl:message>
+  <wsdl:message name="BillInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:BillInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BillInfoSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="BillsBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:BillsBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="BillsBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:BillsBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="BillsBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="BillsUpdatedSoapIn">
+    <wsdl:part name="parameters" element="tns:BillsUpdated" />
+  </wsdl:message>
+  <wsdl:message name="BillsUpdatedSoapOut">
+    <wsdl:part name="parameters" element="tns:BillsUpdatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="BillsUpdatedSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="SponsoredBillsSoapIn">
+    <wsdl:part name="parameters" element="tns:SponsoredBills" />
+  </wsdl:message>
+  <wsdl:message name="SponsoredBillsSoapOut">
+    <wsdl:part name="parameters" element="tns:SponsoredBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SponsoredBillsSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AgendaBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AgendaBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AgendaByCommitteeID" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AgendaByCommitteeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AgendaByID" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AgendaByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:AgendaByCommitteeIDFromDate" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:AgendaByCommitteeIDFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgendaByCommitteeIDFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:AgendaBySessionIDFromDate" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:AgendaBySessionIDFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgendaBySessionIDFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="SessionsSoapIn">
+    <wsdl:part name="parameters" element="tns:Sessions" />
+  </wsdl:message>
+  <wsdl:message name="SessionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionsSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="SessionsbyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SessionsbyID" />
+  </wsdl:message>
+  <wsdl:message name="SessionsbyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionsbyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionsbyIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBySessionIDFromDate" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBySessionIDFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBySessionIDFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBetweenDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBetweenDates" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBetweenDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestToSpeakBetweenDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestToSpeakBetweenDatesSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBySessionIDFromDate" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBySessionIDFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBySessionIDFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBetweenDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBetweenDates" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBetweenDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:ForAgainstNeutralBetweenDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForAgainstNeutralBetweenDatesSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="MembersBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:MembersBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="MembersBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:MembersBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembersBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="MemberByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberByID" />
+  </wsdl:message>
+  <wsdl:message name="MemberByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberByIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CalendarsBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CalendarsBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCommitteeSoapIn">
+    <wsdl:part name="parameters" element="tns:CalendarsByCommittee" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCommitteeSoapOut">
+    <wsdl:part name="parameters" element="tns:CalendarsByCommitteeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCommitteeSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByBodySoapIn">
+    <wsdl:part name="parameters" element="tns:CalendarsByBody" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByBodySoapOut">
+    <wsdl:part name="parameters" element="tns:CalendarsByBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByBodySOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:CalendarsFromDate" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:CalendarsFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCalendarIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CalendarsByCalendarID" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCalendarIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CalendarsByCalendarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalendarsByCalendarIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsBySessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsBySessionID" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsBySessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsBySessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsBySessionIDSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNum" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNumFromDate" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNumFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsFromDate" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateToDateSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsFromDateToDate" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateToDateSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsFromDateToDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsFromDateToDateSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByDocTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsByDocType" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByDocTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsByDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByDocTypeSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumDocTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNumDocType" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumDocTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentsByBillNumDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentsByBillNumDocTypeSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:message name="ARSSoapIn">
+    <wsdl:part name="parameters" element="tns:ARS" />
+  </wsdl:message>
+  <wsdl:message name="ARSSoapOut">
+    <wsdl:part name="parameters" element="tns:ARSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ARSSOAPLegServiceHeader">
+    <wsdl:part name="SOAPLegServiceHeader" element="tns:SOAPLegServiceHeader" />
+  </wsdl:message>
+  <wsdl:portType name="LegServiceSoap">
+    <wsdl:operation name="CommitteeActionsQualified">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Committee Action values qualified by Body (H/S/B) and Committee Type (S/F)</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeActionsQualifiedSoapIn" />
+      <wsdl:output message="tns:CommitteeActionsQualifiedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeActions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Committee Action values</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeActionsSoapIn" />
+      <wsdl:output message="tns:CommitteeActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegislature">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Committee information by Legislature.  Parameter: Legislature</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeByLegislatureSoapIn" />
+      <wsdl:output message="tns:CommitteeByLegislatureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegBody">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Committee information by Legislature and Body.  Parameter Legislature / Body</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeByLegBodySoapIn" />
+      <wsdl:output message="tns:CommitteeByLegBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Committee information by Legislature  and Committee Type.  Parameters Legislature / Committee Type (S=Standing/F=Floor)</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeByLegTypeSoapIn" />
+      <wsdl:output message="tns:CommitteeByLegTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegTypeBody">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Committee information by Legislature, Committee Type and Body.  Parameters Legislature / Committee Type / Body</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeByLegTypeBodySoapIn" />
+      <wsdl:output message="tns:CommitteeByLegTypeBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Committee information by Legislature and Committee.  Parameters: Legislature / Committee ID</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeByLegIDSoapIn" />
+      <wsdl:output message="tns:CommitteeByLegIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeMembers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Committee Members for a given Session and Committee. Parameters SessionID / Committee ID</wsdl:documentation>
+      <wsdl:input message="tns:CommitteeMembersSoapIn" />
+      <wsdl:output message="tns:CommitteeMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberCommittees">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Standing Committees that a Member is assigned to. Parameters: Session ID / Member ID</wsdl:documentation>
+      <wsdl:input message="tns:MemberCommitteesSoapIn" />
+      <wsdl:output message="tns:MemberCommitteesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session.  Parameter SessionID.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesBySessionIDSoapIn" />
+      <wsdl:output message="tns:FloorVotesBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session and Bill Number.  Parameter SessionID / Bill Number.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesByBillSoapIn" />
+      <wsdl:output message="tns:FloorVotesByBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session ID updated since a given Date.  Parameter SessionID / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesFromDateSoapIn" />
+      <wsdl:output message="tns:FloorVotesFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDateToDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session ID updated since a given Date.  Parameter SessionID / Start Date / End Date.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesFromDateToDateSoapIn" />
+      <wsdl:output message="tns:FloorVotesFromDateToDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByCommID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session ID and Committee ID.  Parameter SessionID / Committee ID.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesByCommIDSoapIn" />
+      <wsdl:output message="tns:FloorVotesByCommIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBillFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Votes from Floor Committees for a given Session ID and Bill Number updated since some Date.  Parameter SessionID / Bill Number / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:FloorVotesByBillFromDateSoapIn" />
+      <wsdl:output message="tns:FloorVotesByBillFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committees for a given Session.  Parameter SessionID.</wsdl:documentation>
+      <wsdl:input message="tns:StandingBySessionIDSoapIn" />
+      <wsdl:output message="tns:StandingBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommittee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee information for a given Session and Committee ID.  Parameter SessionID / Committee ID.</wsdl:documentation>
+      <wsdl:input message="tns:StandingByCommitteeSoapIn" />
+      <wsdl:output message="tns:StandingByCommitteeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingByBillNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee information for a given Session and Bill Number.  Parameter SessionID / Bill Number.</wsdl:documentation>
+      <wsdl:input message="tns:StandingByBillNumSoapIn" />
+      <wsdl:output message="tns:StandingByBillNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee information for a given Session starting at a particular Date.  Parameter SessionID / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:StandingFromDateSoapIn" />
+      <wsdl:output message="tns:StandingFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee information for a given Session and Committee reporting since a particular Date.  Parameter SessionID / Committee ID / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:StandingByCommFromDateSoapIn" />
+      <wsdl:output message="tns:StandingByCommFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee Votes for a given Session from a particular date.  Parameter SessionID / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:StandingVoteFromDateSoapIn" />
+      <wsdl:output message="tns:StandingVoteFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDateToDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee Votes for a given Session from a particular date.  Parameter SessionID / Start Date.</wsdl:documentation>
+      <wsdl:input message="tns:StandingVoteFromDateToDateSoapIn" />
+      <wsdl:output message="tns:StandingVoteFromDateToDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForBillNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee Votes for a given Session and Bill Number.  Parameter SessionID / Bill Number.</wsdl:documentation>
+      <wsdl:input message="tns:StandingVoteForBillNumSoapIn" />
+      <wsdl:output message="tns:StandingVoteForBillNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee Votes for a given Session and Committee ID.  Parameter SessionID / Committee ID.</wsdl:documentation>
+      <wsdl:input message="tns:StandingVoteForCommIDSoapIn" />
+      <wsdl:output message="tns:StandingVoteForCommIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommIDOnDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Standing Committee Votes for a given Session, Committee ID on a given Date.  Parameter SessionID / Committee ID / Date.</wsdl:documentation>
+      <wsdl:input message="tns:StandingVoteForCommIDOnDateSoapIn" />
+      <wsdl:output message="tns:StandingVoteForCommIDOnDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return detailed information for a given Bill.  Parameters SessionID / Bill Number.</wsdl:documentation>
+      <wsdl:input message="tns:BillInfoSoapIn" />
+      <wsdl:output message="tns:BillInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillsBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return information regarding all bills for a given Session.  Parameter SessionID.</wsdl:documentation>
+      <wsdl:input message="tns:BillsBySessionIDSoapIn" />
+      <wsdl:output message="tns:BillsBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillsUpdated">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return information regarding all bills for a given Session that have been updated since a particular date.  Parameter SessionID / Updated Date.</wsdl:documentation>
+      <wsdl:input message="tns:BillsUpdatedSoapIn" />
+      <wsdl:output message="tns:BillsUpdatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SponsoredBills">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all the bills that the requested member is sponsoring. Parameters: SessionID / Member ID</wsdl:documentation>
+      <wsdl:input message="tns:SponsoredBillsSoapIn" />
+      <wsdl:output message="tns:SponsoredBillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Agendas for a given Session. Parameters: SessionID</wsdl:documentation>
+      <wsdl:input message="tns:AgendaBySessionIDSoapIn" />
+      <wsdl:output message="tns:AgendaBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Agendas for a given Session and Committee Id. Parameters: Session ID / Committee ID</wsdl:documentation>
+      <wsdl:input message="tns:AgendaByCommitteeIDSoapIn" />
+      <wsdl:output message="tns:AgendaByCommitteeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return an agenda based on ID. Parameters: Agenda ID</wsdl:documentation>
+      <wsdl:input message="tns:AgendaByIDSoapIn" />
+      <wsdl:output message="tns:AgendaByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeIDFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Agendas for the requested Session / Committee from a given date. Parameters: Session ID / Committee ID / Start Date</wsdl:documentation>
+      <wsdl:input message="tns:AgendaByCommitteeIDFromDateSoapIn" />
+      <wsdl:output message="tns:AgendaByCommitteeIDFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionIDFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Agendas for the requested session from a given date.  Parameters: Session ID / Start Date</wsdl:documentation>
+      <wsdl:input message="tns:AgendaBySessionIDFromDateSoapIn" />
+      <wsdl:output message="tns:AgendaBySessionIDFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sessions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return information regarding all Sessions.</wsdl:documentation>
+      <wsdl:input message="tns:SessionsSoapIn" />
+      <wsdl:output message="tns:SessionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionsbyID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return information regarding a particular Session. Parameters: SessionID</wsdl:documentation>
+      <wsdl:input message="tns:SessionsbyIDSoapIn" />
+      <wsdl:output message="tns:SessionsbyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Reqest to speak for a particular Session. Parameters: SessionID</wsdl:documentation>
+      <wsdl:input message="tns:RequestToSpeakBySessionIDSoapIn" />
+      <wsdl:output message="tns:RequestToSpeakBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionIDFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Reqest to speak for a particular Session. Parameters: SessionID / StartDate</wsdl:documentation>
+      <wsdl:input message="tns:RequestToSpeakBySessionIDFromDateSoapIn" />
+      <wsdl:output message="tns:RequestToSpeakBySessionIDFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBetweenDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Reqest to speak for a particular Session. Parameters: SessionID / StartDate / EndDate</wsdl:documentation>
+      <wsdl:input message="tns:RequestToSpeakBetweenDatesSoapIn" />
+      <wsdl:output message="tns:RequestToSpeakBetweenDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Bill Positions for a particular Session. Parameters: SessionID</wsdl:documentation>
+      <wsdl:input message="tns:ForAgainstNeutralBySessionIDSoapIn" />
+      <wsdl:output message="tns:ForAgainstNeutralBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionIDFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Bill Positions for a particular Session starting at a given date. Parameters: SessionID / Start Date</wsdl:documentation>
+      <wsdl:input message="tns:ForAgainstNeutralBySessionIDFromDateSoapIn" />
+      <wsdl:output message="tns:ForAgainstNeutralBySessionIDFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBetweenDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Bill Positions for a particular Session between two dates.  Parameters: SessionID / Start Date / End Date</wsdl:documentation>
+      <wsdl:input message="tns:ForAgainstNeutralBetweenDatesSoapIn" />
+      <wsdl:output message="tns:ForAgainstNeutralBetweenDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MembersBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Members Information for a Session</wsdl:documentation>
+      <wsdl:input message="tns:MembersBySessionIDSoapIn" />
+      <wsdl:output message="tns:MembersBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Member Information based on ID</wsdl:documentation>
+      <wsdl:input message="tns:MemberByIDSoapIn" />
+      <wsdl:output message="tns:MemberByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return All Calendars for a Session. Parameter: SessionID.</wsdl:documentation>
+      <wsdl:input message="tns:CalendarsBySessionIDSoapIn" />
+      <wsdl:output message="tns:CalendarsBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCommittee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Calendars for a committee in a session. Parameters SessionID / Committee ID.</wsdl:documentation>
+      <wsdl:input message="tns:CalendarsByCommitteeSoapIn" />
+      <wsdl:output message="tns:CalendarsByCommitteeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByBody">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Calendars for a particular body and session . Parameters SessionID / Body.</wsdl:documentation>
+      <wsdl:input message="tns:CalendarsByBodySoapIn" />
+      <wsdl:output message="tns:CalendarsByBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return all Calendars for a session starting at a given Date. Parameters SessionID / Date.</wsdl:documentation>
+      <wsdl:input message="tns:CalendarsFromDateSoapIn" />
+      <wsdl:output message="tns:CalendarsFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCalendarID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return Calendar information based on a Calendar ID. Parameters Calendar Id.</wsdl:documentation>
+      <wsdl:input message="tns:CalendarsByCalendarIDSoapIn" />
+      <wsdl:output message="tns:CalendarsByCalendarIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsBySessionID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Documents that have been published for the selected Session. Parameters: SessionID</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsBySessionIDSoapIn" />
+      <wsdl:output message="tns:DocumentsBySessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Documents that have been published for a particular Bill Number. Parameters: SessionID / Bill Number</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsByBillNumSoapIn" />
+      <wsdl:output message="tns:DocumentsByBillNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Documents for a Bill Number starting at some Date.  Parameters: SessionID / Bill Number / Date</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsByBillNumFromDateSoapIn" />
+      <wsdl:output message="tns:DocumentsByBillNumFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Documents for a Session starting at some Date.  Parameters: SessionID / Bill Number / Date</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsFromDateSoapIn" />
+      <wsdl:output message="tns:DocumentsFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDateToDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Documents for a Session starting at some Date.  Parameters: SessionID / Bill Number / Start Date / End Date</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsFromDateToDateSoapIn" />
+      <wsdl:output message="tns:DocumentsFromDateToDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByDocType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all Documents for a session that are of a cetain Document Type.  Parameters: Session ID / Document Type (A=Adopted Amendment, B=Bill, F=Fiscal Note, P=Proposed Amendments, S=Summary/Fact Sheet</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsByDocTypeSoapIn" />
+      <wsdl:output message="tns:DocumentsByDocTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumDocType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns on Document Type for one Bill Number and Session. Parameters: SessionID / Bill Number / Document Type</wsdl:documentation>
+      <wsdl:input message="tns:DocumentsByBillNumDocTypeSoapIn" />
+      <wsdl:output message="tns:DocumentsByBillNumDocTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ARS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ARS documents. Parameters: None</wsdl:documentation>
+      <wsdl:input message="tns:ARSSoapIn" />
+      <wsdl:output message="tns:ARSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LegServiceSoap" type="tns:LegServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommitteeActionsQualified">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeActionsQualified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeActionsQualifiedSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeActions">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeActionsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegislature">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeByLegislature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeByLegislatureSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegBody">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeByLegBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeByLegBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegType">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeByLegType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeByLegTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegTypeBody">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeByLegTypeBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeByLegTypeBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegID">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeByLegID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeByLegIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeMembers">
+      <soap:operation soapAction="http://azleg.gov/webservices/CommitteeMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CommitteeMembersSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberCommittees">
+      <soap:operation soapAction="http://azleg.gov/webservices/MemberCommittees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MemberCommitteesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBill">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesByBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesByBillSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDateToDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByCommID">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesByCommID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesByCommIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBillFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/FloorVotesByBillFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FloorVotesByBillFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommittee">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingByCommittee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingByCommitteeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByBillNum">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingByBillNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingByBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingByCommFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingByCommFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingVoteFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingVoteFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDateToDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingVoteFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingVoteFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForBillNum">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingVoteForBillNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingVoteForBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommID">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingVoteForCommID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingVoteForCommIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommIDOnDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/StandingVoteForCommIDOnDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandingVoteForCommIDOnDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillInfo">
+      <soap:operation soapAction="http://azleg.gov/webservices/BillInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BillInfoSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillsBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/BillsBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BillsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillsUpdated">
+      <soap:operation soapAction="http://azleg.gov/webservices/BillsUpdated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BillsUpdatedSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SponsoredBills">
+      <soap:operation soapAction="http://azleg.gov/webservices/SponsoredBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SponsoredBillsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/AgendaBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AgendaBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeID">
+      <soap:operation soapAction="http://azleg.gov/webservices/AgendaByCommitteeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AgendaByCommitteeIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByID">
+      <soap:operation soapAction="http://azleg.gov/webservices/AgendaByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AgendaByIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeIDFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/AgendaByCommitteeIDFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AgendaByCommitteeIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionIDFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/AgendaBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AgendaBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sessions">
+      <soap:operation soapAction="http://azleg.gov/webservices/Sessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SessionsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionsbyID">
+      <soap:operation soapAction="http://azleg.gov/webservices/SessionsbyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SessionsbyIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestToSpeakBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionIDFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestToSpeakBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBetweenDates">
+      <soap:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBetweenDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestToSpeakBetweenDatesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ForAgainstNeutralBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionIDFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ForAgainstNeutralBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBetweenDates">
+      <soap:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBetweenDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ForAgainstNeutralBetweenDatesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MembersBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/MembersBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MembersBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberByID">
+      <soap:operation soapAction="http://azleg.gov/webservices/MemberByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MemberByIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/CalendarsBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalendarsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCommittee">
+      <soap:operation soapAction="http://azleg.gov/webservices/CalendarsByCommittee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalendarsByCommitteeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByBody">
+      <soap:operation soapAction="http://azleg.gov/webservices/CalendarsByBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalendarsByBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/CalendarsFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalendarsFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCalendarID">
+      <soap:operation soapAction="http://azleg.gov/webservices/CalendarsByCalendarID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalendarsByCalendarIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsBySessionID">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsBySessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNum">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsByBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNumFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsByBillNumFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDateToDate">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByDocType">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsByDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsByDocTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumDocType">
+      <soap:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNumDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DocumentsByBillNumDocTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ARS">
+      <soap:operation soapAction="http://azleg.gov/webservices/ARS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ARSSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LegServiceSoap12" type="tns:LegServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommitteeActionsQualified">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeActionsQualified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeActionsQualifiedSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeActions">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeActionsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegislature">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeByLegislature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeByLegislatureSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegBody">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeByLegBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeByLegBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegType">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeByLegType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeByLegTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegTypeBody">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeByLegTypeBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeByLegTypeBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeByLegID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeByLegID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeByLegIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitteeMembers">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CommitteeMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CommitteeMembersSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberCommittees">
+      <soap12:operation soapAction="http://azleg.gov/webservices/MemberCommittees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MemberCommitteesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBill">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesByBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesByBillSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesFromDateToDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByCommID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesByCommID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesByCommIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FloorVotesByBillFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/FloorVotesByBillFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FloorVotesByBillFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommittee">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingByCommittee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingByCommitteeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByBillNum">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingByBillNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingByBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingByCommFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingByCommFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingByCommFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingVoteFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingVoteFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteFromDateToDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingVoteFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingVoteFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForBillNum">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingVoteForBillNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingVoteForBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingVoteForCommID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingVoteForCommIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingVoteForCommIDOnDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/StandingVoteForCommIDOnDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandingVoteForCommIDOnDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillInfo">
+      <soap12:operation soapAction="http://azleg.gov/webservices/BillInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BillInfoSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillsBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/BillsBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BillsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillsUpdated">
+      <soap12:operation soapAction="http://azleg.gov/webservices/BillsUpdated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BillsUpdatedSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SponsoredBills">
+      <soap12:operation soapAction="http://azleg.gov/webservices/SponsoredBills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SponsoredBillsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/AgendaBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AgendaBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/AgendaByCommitteeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AgendaByCommitteeIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/AgendaByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AgendaByIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaByCommitteeIDFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/AgendaByCommitteeIDFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AgendaByCommitteeIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgendaBySessionIDFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/AgendaBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AgendaBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sessions">
+      <soap12:operation soapAction="http://azleg.gov/webservices/Sessions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SessionsSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionsbyID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/SessionsbyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SessionsbyIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestToSpeakBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBySessionIDFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestToSpeakBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToSpeakBetweenDates">
+      <soap12:operation soapAction="http://azleg.gov/webservices/RequestToSpeakBetweenDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestToSpeakBetweenDatesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ForAgainstNeutralBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBySessionIDFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBySessionIDFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ForAgainstNeutralBySessionIDFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForAgainstNeutralBetweenDates">
+      <soap12:operation soapAction="http://azleg.gov/webservices/ForAgainstNeutralBetweenDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ForAgainstNeutralBetweenDatesSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MembersBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/MembersBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MembersBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberByID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/MemberByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MemberByIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CalendarsBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalendarsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCommittee">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CalendarsByCommittee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalendarsByCommitteeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByBody">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CalendarsByBody" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalendarsByBodySOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CalendarsFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalendarsFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalendarsByCalendarID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/CalendarsByCalendarID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalendarsByCalendarIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsBySessionID">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsBySessionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsBySessionIDSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNum">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsByBillNumSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNumFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsByBillNumFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsFromDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsFromDateToDate">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsFromDateToDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsFromDateToDateSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByDocType">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsByDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsByDocTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentsByBillNumDocType">
+      <soap12:operation soapAction="http://azleg.gov/webservices/DocumentsByBillNumDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DocumentsByBillNumDocTypeSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ARS">
+      <soap12:operation soapAction="http://azleg.gov/webservices/ARS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ARSSOAPLegServiceHeader" part="SOAPLegServiceHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LegService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Service to retrieve Legislative data.</wsdl:documentation>
+    <wsdl:port name="LegServiceSoap" binding="tns:LegServiceSoap">
+      <soap:address location="https://www.azleg.gov/xml/legservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LegServiceSoap12" binding="tns:LegServiceSoap12">
+      <soap12:address location="https://www.azleg.gov/xml/legservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
