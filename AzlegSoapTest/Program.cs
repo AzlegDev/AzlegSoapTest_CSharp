@@ -28,6 +28,7 @@ namespace AzlegSoapTest
             try
             {
                 // Sends the request and writes the response to 
+                // For a complete list of possible commands, navigate to https://www.azleg.gov/xml/legservice.asmx
                 result = ls.ARS();
             }
             catch (Exception e)
